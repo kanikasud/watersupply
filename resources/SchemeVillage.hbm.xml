@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="in.redexp.watersupply.model.SchemeVillage" table="prwss_main.mst_scheme_village" lazy="true">
+      <meta attribute="class-description">
+         This class contains the SchemeVillage detail. 
+      </meta>
+      <composite-id>
+    <key-property name="schemeID" column="scheme_id" type="string"/>
+    <key-property name="villageID" column="village_id" type="string"/>
+</composite-id>
+     
+      <property name="status" column="status" type="string"/>
+      <property name="villageName" column="vill_name" type="string"/>
+       <property name="villageCategory" column="village_category" type="string"/>
+        <property name="schemeCommissionedDate" column="scheme_commissioned_date" type="string"/>
+        <property name="schemeCompletedDate" column="scheme_completed_date" type="string"/>
+   </class>
+</hibernate-mapping>

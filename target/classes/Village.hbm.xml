@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ <hibernate-mapping>
+   <class name="in.redexp.watersupply.model.Village" table="prwss_main.mst_village" lazy="true">
+      <meta attribute="class-description">
+         This class contains the user detail. 
+      </meta>
+      <id name="villageID" type="string" column="village_id">
+         <generator class="identity"/>
+      </id>
+      <property name="constituencyID" column="constituency_id" type="string"/>
+      <property name="villageName" column="village_name" type="string"/>
+      <property name="districtID" column="district_id" type="string" />
+     
+   </class>
+</hibernate-mapping>

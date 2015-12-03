@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+   <class name="in.redexp.watersupply.model.User" table="prwss_main.sd_user" lazy="true">
+      <meta attribute="class-description">
+         This class contains the user detail. 
+      </meta>
+      <id name="userID" type="string" column="user_id">
+         <generator class="identity"/>
+      </id>
+      <property name="userName" column="user_name" type="string"/>
+      <property name="pwd" column="user_password" type="string"/>
+      <property name="roleID" column="role_id" type="string"/>
+      <property name="empID" column="employee_id" type="string"/>
+  <!--   <bag name="locations" table="sd_user_location" cascade="all">
+          	<key column="user_id"/>
+          	<one-to-many   class="in.redexp.watersupply.model.UserLocation" />
+  		 </bag > -->
+   </class>
+</hibernate-mapping>

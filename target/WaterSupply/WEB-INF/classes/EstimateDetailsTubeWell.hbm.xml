@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    <hibernate-mapping>
+   <class name="in.redexp.watersupply.model.EstimateDetailsTubeWell" table="prwss_main.mst_tubewell_estimate" lazy="true">
+      <meta attribute="class-description">
+         This class contains the division detail. 
+      </meta>
+		<id name="estimateID" type="long" column="estimate_id">
+			<generator class="identity"/>
+		</id>
+		<property name="schemeID" column="scheme_id" type="string"/>
+		<property name="divisionID" column="division_id" type="string"/>
+		<property name="subDivisionID" column="sub_division_id" type="string"/>
+		<property name="slcFormed" column="slcformed" type="boolean"/>
+		<property name="gpwsc" column="gpwsc" type="boolean"/>
+		
+		<property name="dischargeOfPumpingMachinery" column="discharge_of_pumping_machinery" type="string"/>
+		<property name="proposedRunningHrsMachinery" column="proposed_running_hrs_machinery" type="string"/>
+		<property name="hPForPumpingMachinery" column="hp_for_pumpingmachinery" type="string"/>
+        
+		<property name="isSchemeSufficient" column="is_scheme_sufficient" type="boolean"/>
+		<property name="isRepairRequiredExisting" column="is_repair_requiredexisting" type="boolean"/>
+		<property name="existingRepairOrReplacement" column="existing_repair_or_replacement" type="string"/>
+		<property name="horsePowerInBHP" column="horsepower_in_bhp" type="string"/>
+		<property name="headInMtrs" column="head_in_mtrs" type="string"/>
+		<property name="dischargeInLPH" column="discharge_in_lph" type="string"/>
+		
+		<property name="isRepairCPRequired" column="isrepair_cp_required" type="boolean"/>
+		<property name="costOfRepairPump" column="cost_of_repairpump" type="string"/>
+		<property name="cpRepairOrReplacement" column="cprepair_or_replacement" type="string"/>
+		<property name="costOfRepairCP" column="cprepair_Cost" type="string"/>
+		<property name="costOfRepairOHSR" column="costof_repairohsr" type="string"/>
+		<property name="costOfChlorination" column="costof_chlorination" type="string"/>
+		<property name="costOfRepairExistingComponents" column="costof_repairexistingcomponents" type="string"/>
+		<property name="costOfRepairPipeLine" column="costof_repairpipeline" type="string"/>
+		<property name="costOfController" column="costof_controller" type="string"/>
+		<property name="len160mmPipeline" column="len160mmpipeline" type="string"/>
+		<property name="len110mmPipeline" column="len110mmpipeline" type="string"/>
+		<property name="len90mmPipeline" column="len90mmpipeline" type="string"/>
+		<property name="len75mmPipeline" column="len75mmpipeline" type="string"/>
+		<property name="len63mmPipeline" column="len63mmpipeline" type="string"/>
+		
+		<property name="len150mmSluiceValve" column="len150mmsluicevalve" type="string"/>
+		<property name="len100mmSluiceValve" column="len100mmsluicevalve" type="string"/>
+		<property name="len80mmSluiceValve" column="len80mmsluicevalve" type="string"/>
+		<property name="len60Mtr" column="len60mtr" type="string"/>
+		<property name="len90Mtr" column="len90mtr" type="string"/>
+		<property name="dismantlingBrick" column="dismantling_brick" type="string"/>
+		<property name="dismantlingCCFlooring" column="dismantling_cc_flooring" type="string"/>
+		<property name="BTBillCost" column="btbill_cost" type="string"/>
+		<property name="noOfWaterMeter" column="no_of_watermeter" type="string"/>
+		
+		<property name="installSignBoard" column="install_signboard" type="string"/>
+		<property name="signBoardDetails" column="signboard_details" type="string"/>
+		<property name="costOfSignBoard" column="costof_signboard" type="string"/>
+		<property name="addedNewWaterPipeline" column="added_newwaterpipeline" type="string"/>
+		<property name="numberOfNewWaterPipeline" column="number_of_newwaterpipeline" type="string"/>
+	</class>
+</hibernate-mapping>

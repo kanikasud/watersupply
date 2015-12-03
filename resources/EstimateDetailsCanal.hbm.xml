@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    <hibernate-mapping>
+   <class name="in.redexp.watersupply.model.EstimateDetailsCanal" table="prwss_main.mst_canal_estimate" lazy="true">
+      <meta attribute="class-description">
+         This class contains the canal form detail. 
+      </meta>
+		<id name="estimateID" type="long" column="estimate_id">
+			<generator class="identity"/>
+		</id>
+		<!-- same as Tubewell -->
+		<property name="schemeID" column="scheme_id" type="string"/>
+		<property name="divisionID" column="division_id" type="string"/>
+		<property name="subDivisionID" column="sub_division_id" type="string"/>
+		<property name="slcFormed" column="slcformed" type="boolean"/>
+		<property name="gpwsc" column="gpwsc" type="boolean"/>
+		
+		
+		<property name="dischargeOfPumpingMachinery" column="discharge_of_pumping_machinery" type="string"/>
+		<property name="proposedRunningHrsMachinery" column="proposed_running_hrs_machinery" type="string"/>
+		<property name="isSchemeSufficient" column="is_scheme_sufficient" type="boolean"/>
+		
+		<!-- Only for Canal -->
+		<property name="costOfRepairInlet" column="cost_repair_inlet" type="string" />
+		<property name="repairRawWater" column="is_repair_required_raw_water" type="boolean"/>
+		<property name="repairOrReplacementRWM" column="repair_or_replacement_rwm" type="string"/>
+		<property name="horsePowerRW" column="horsepower_in_bhp_canal_rw" type="string"/>
+		<property name="headInMtrsRW" column="head_in_mtrs_rw" type="string"/>
+		<property name="dischargeInLPHRW" column="discharge_in_lph_rw" type="string" />
+		<property name="repairRawWaterCost" column="repair_raw_water_cost" type="string" />
+		
+		
+		<property name="repairClearWater" column="is_repair_required_clear_water" type="boolean"/>
+		<property name="repairOrReplacementRCWM" column="repair_or_replacement_cw" type="string"/>
+		<property name="costOfRepairRCWM" column="cost_of_repair_cw" type="string"/>
+		<property name="headInMtrsRCWM" column="head_in_mtrs_cw" type="string"/>
+		<property name="dischargeInLPHRCWM" column="discharge_in_lph_cw" type="string" />
+		
+		<property name="costOfReplacingFilterMedia" column="cost_replace_filter_media" type="string" />
+		<property name="costOfRepairFilterBeds" column="cost_filter_beds" type="string" />
+		<property name="costOfStorageTank" column="cost_storage_tank" type="string" />
+		<property name="costOfRepairHighLevelTank" column="cost_high_level_tank" type="string" />
+		<property name="costOfRepairOfSAndSWell" column="cost_s_and_s_well" type="string" />
+		<property name="costOfRepairOfClearWater" column="cost__repair_clear_water" type="string" />
+		
+		<property name="repairTreatmentPlant" column="repair_treatment_plant_required" type="boolean" />
+		<property name="costOfRepairTreatmentPlant" column="cost_repair_treatment_plant" type="string" />
+		
+		
+		<property name="repairrepCP" column="is_repair_cp_required" type="boolean"/>
+		<property name="repairOrReplacementCPCanal" column="repair_replacement_canal_cp" type="string" />
+		<property name="costOfRepairCPCanal" column="cost_cp_repair_canal" type="string"/>
+		<property name="repairOrReplacementPumpCanal" column="cost_cp_repair_pump_canal" type="string"/>
+		
+		<property name="costOfRepairOHSR" column="costof_repairohsr" type="string"/>
+		<property name="chlorinationCanalRequired" column="chlorination_required_required" type="boolean"/>
+		<property name="costOfRepairExistingComponents" column="costof_repairexistingcomponents" type="string"/>
+		<property name="costOfRepairPipeLine" column="costof_repairpipeline" type="string"/>
+		<property name="controllerCanalRequired" column="controller_required" type="boolean"/>
+		
+		
+		<!-- same as Tubewell -->
+		<property name="len160mmPipeline" column="len160mmpipeline" type="string"/>
+		<property name="len110mmPipeline" column="len110mmpipeline" type="string"/>
+		<property name="len90mmPipeline" column="len90mmpipeline" type="string"/>
+		<property name="len75mmPipeline" column="len75mmpipeline" type="string"/>
+		<property name="len63mmPipeline" column="len63mmpipeline" type="string"/>
+		
+		<property name="len150mmSluiceValve" column="len150mmsluicevalve" type="string"/>
+		<property name="len100mmSluiceValve" column="len100mmsluicevalve" type="string"/>
+		<property name="len80mmSluiceValve" column="len80mmsluicevalve" type="string"/>
+		<property name="len60Mtr" column="len60mtr" type="string"/>
+		<property name="len90Mtr" column="len90mtr" type="string"/>
+		<property name="dismantlingBrick" column="dismantling_brick" type="string"/>
+		<property name="dismantlingCCFlooring" column="dismantling_cc_flooring" type="string"/>
+		<property name="BTBillCost" column="btbill_cost" type="string"/>
+		<property name="noOfWaterMeter" column="no_of_watermeter" type="string"/>
+		
+		<property name="installSignBoard" column="install_signboard" type="string"/>
+		<property name="signBoardDetails" column="signboard_details" type="string"/>
+		<property name="costOfSignBoard" column="costof_signboard" type="string"/>
+		<property name="addedNewWaterPipeline" column="added_newwaterpipeline" type="string"/>
+		<property name="numberOfNewWaterPipeline" column="number_of_newwaterpipeline" type="string"/>
+	</class>
+</hibernate-mapping>

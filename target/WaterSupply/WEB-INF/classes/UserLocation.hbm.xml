@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+   <class name="in.redexp.watersupply.model.UserLocation" table="prwss_main.sd_user_location">
+      <meta attribute="class-description">
+         This class contains the user detail. 
+      </meta>
+      <composite-id>
+<key-property name="locationID" column="location_id" type="java.lang.String"/>
+<key-property name="userID" column="user_id" type="java.lang.String"/>
+</composite-id>
+      
+  <!--    <many-to-one not-null="false" insert="false" update="false" foreign-key="FK_LOCATION_USER" column="user_id" name="userID" class="in.redexp.watersupply.model.User" /> -->
+      
+   </class>
+</hibernate-mapping>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+		"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+		"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="true"></constant>
+ 
+	<constant name="struts.convention.result.path" value="/"></constant>
+	<package name="waterSupply" namespace="/" extends="struts-default">
+		<action name="index">
+			<result>/index.jsp</result>
+		</action>
+		<action name="login" class="in.redexp.watersupply.controller.LoginController">
+			<result name="success" type="chain">	
+			<param name="actionName">displaySchemeFilter</param>
+            	<param name="namespace">/</param> 
+            	</result>
+			<result name="error">/index.jsp</result>
+		</action>
+		<action name="editSchemeEstimation" class="in.redexp.watersupply.controller.SchemeController" method="editEstimate">
+			<result name="error">/searchFilter.jsp</result>
+			<result name="success">/editEstimate.jsp</result>
+		</action>
+		<action name="displaySchemeFilter" class="in.redexp.watersupply.controller.SchemeController">
+			<result name="success">/searchFilter.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="getAllSchemes" class="in.redexp.watersupply.controller.SchemeController">
+			<result name="success">/searchFilter.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="saveEstimateTubeWell" class="in.redexp.watersupply.controller.TWEstimateController" method="saveEstimateTubeWell">
+			<result name="success" type="chain">
+				<param name="actionName">showTubeWellEstimate</param>
+				<param name="namespace">/</param> 
+			</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="showTubeWellEstimate" class="in.redexp.watersupply.controller.TWEstimateController" method="showTubeWellEstimate">
+			<result name="success">/showTubeWellEstimate.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		
+		<action name="showCanalEstimate" class="in.redexp.watersupply.controller.CanalEstimateController" method="showCanalEstimate">
+			<result name="success">/showCanalEstimate.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		
+		<action name="saveEstimateCanal" class="in.redexp.watersupply.controller.CanalEstimateController" method="saveEstimateCanal">
+			<result name="success" type="chain">
+				<param name="actionName">showCanalEstimate</param>
+				<param name="namespace">/</param> 
+			</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="showWorkflow" class="in.redexp.watersupply.controller.WorkflowController">
+			<result name="success">
+				/showWorkflow.jsp
+			</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="updateWorkflowRow" class="in.redexp.watersupply.controller.WorkflowController" method="updateWorkflow">
+			<result name="success" type="chain">
+				<param name="actionName">showWorkflow</param>
+				<param name="namespace">/</param> 
+			</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="getSchemes" class="in.redexp.watersupply.controller.SchemeController" method="getFilteredSchemes">
+			<result name="success">/searchFilter.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="exportTWEstimateDetails" class="in.redexp.watersupply.controller.TWEstimateController" method="exportTWEstimateDetails">
+   <result name="success" type="stream">
+    <param name="contentDisposition">attachment</param>
+    <param name="contentType">application/vnd.ms-excel</param>
+    <param name="inputName">inputStream</param>
+    <param name="bufferSize">1024</param>
+    </result>
+  </action>
+	</package>
+
+</struts>

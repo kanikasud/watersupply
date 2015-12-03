@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+
+<hibernate-configuration>
+
+<session-factory>
+
+	<!-- Database connection settings -->
+	<property name="hibernate.dialect">
+      org.hibernate.dialect.PostgreSQLDialect
+   </property>
+   <property name="hibernate.connection.driver_class">
+      org.postgresql.Driver
+   </property>
+   <property name="hibernate.connection.url">
+      jdbc:postgresql://localhost:5432/prwss_db_uat_final_test_28042014
+   </property>
+   <property name="hibernate.connection.username">
+      postgres
+   </property>
+   <property name="hibernate.connection.password">
+      3xchange!
+   </property>
+<property name="hibernate.show_sql">true</property>
+
+	<!-- Drop and re-create the database schema on startup -->
+        <property name="hbm2dll.auto">update</property>
+
+	<property name="connection.autocommit">false</property>
+	<property name="hibernate.connection.useUnicode">true</property>
+	<property name="hibernate.connection.characterEncoding">
+		UTF-8
+	</property>
+
+	
+    
+
+
+
+	<!-- Mapping for base setup -->
+	<mapping resource="District.hbm.xml" />
+	<mapping resource="User.hbm.xml" />
+	<mapping resource="Scheme.hbm.xml" />
+	<mapping resource="UserLocation.hbm.xml" />
+	<mapping resource="Division.hbm.xml" />
+	<mapping resource="SchemeVillage.hbm.xml" />
+	<mapping resource="Village.hbm.xml" />
+	<mapping resource="SubDivision.hbm.xml" />
+	<mapping resource="Workflow.hbm.xml" />
+	<mapping resource="EstimateDetailsTubeWell.hbm.xml" />
+	<mapping resource="EstimateDetailsCanal.hbm.xml" />
+	<mapping resource="EstimateInbox.hbm.xml" />
+</session-factory>
+
+</hibernate-configuration>

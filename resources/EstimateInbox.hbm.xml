@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+     <hibernate-mapping>
+   <class name="in.redexp.watersupply.model.EstimateInbox" table="prwss_main.mst_estimate_inbox" lazy="true">
+      <meta attribute="class-description">
+         This class contains the inbox detail. 
+      </meta>
+      <id name="inboxId" type="long" column="inbox_id">
+         <generator class="identity"/>
+      </id>
+      <property name="estimateID" column="estimate_id" type="string"/>
+     <property name="sendToID" column="send_to_id" type="string"/>
+     <property name="sendToLoc" column="send_to_loc" type="string"/>
+     <property name="dispatchNo" column="dispacth_no" type="string"/>
+      <property name="remarks" column="remarks" type="string"/>
+   </class>
+</hibernate-mapping>

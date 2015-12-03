@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+  <hibernate-mapping>
+   <class name="in.redexp.watersupply.model.Scheme" table="prwss_main.mst_scheme_header" lazy="true">
+      <meta attribute="class-description">
+         This class contains the division detail. 
+      </meta>
+      <id name="schemeID" type="string" column="scheme_id">
+         <generator class="identity"/>
+      </id>
+      <property name="locationID" column="location_id" type="string"/>
+      <property name="schemeName" column="scheme_name" type="string"/>
+      <property name="status" column="status" type="string"/>
+      <property name="districtID" column="district_id" type="string"/>
+      <property name="schemeSource" column="scheme_source" type="string"/>
+      <property name="progID" column="prog_id" type="string" />
+   </class>
+</hibernate-mapping>

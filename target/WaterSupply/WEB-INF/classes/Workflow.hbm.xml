@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+     <hibernate-mapping>
+   <class name="in.redexp.watersupply.model.Workflow" table="prwss_main.mst_workflow_mapping" lazy="true">
+      <meta attribute="class-description">
+         This class contains the workflow detail. 
+      </meta>
+      <id name="workflowID" type="long" column="workflow_id">
+         <generator class="identity"/>
+      </id>
+      <property name="fromRoleId" column="from_role_id" type="string"/>
+     <property name="fromLocID" column="from_loc_id" type="string"/>
+     <property name="toRoleId" column="to_role_id" type="string"/>
+     <property name="toLocID" column="to_loc_id" type="string"/>
+     <property name="action" column="workflow_action" type="string"/>
+     <property name="processInDays" column="process_in_days" type="integer"/>
+   </class>
+</hibernate-mapping>
